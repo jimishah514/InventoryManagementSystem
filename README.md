@@ -8,7 +8,7 @@ This is a simple backend exercise that uses Node.js and Express.js to create a s
 
 **Step-1:** Fork and clone the repository.
 ```bash
-git clone https://github.com/faiz-gh/monke-exercise.git
+git clone https://github.com/mon-kelabs/task.git
 ```
 
 **Step-2:** Download and Install Docker Desktop from [here](https://www.docker.com/products/docker-desktop).
