@@ -1,4 +1,4 @@
-# Backend Exercise
+# Monke Labs Full Stack Developer Exercise
 
 ## Description
 
