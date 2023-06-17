@@ -17,7 +17,7 @@ git clone https://github.com/mon-kelabs/task.git
 
 **Step-4:** After installing Docker Desktop, open the terminal and go to the project directory.
 ```bash
-cd monke-exercise
+cd task
 ```
 **Step-5:** Run the following command to install the dependencies.
 ```bash
