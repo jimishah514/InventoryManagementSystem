@@ -10,6 +10,8 @@ exports.seed = async function(knex) {
 		INSERT INTO "customer" ("customer_name") VALUES
 			('Liam James'),
 			('Olivia Rose'),
-			('Emma Grace');
+			('Emma Grace'),
+			('Noah William'),
+			('Ava Elizabeth');
 	`);
 };
