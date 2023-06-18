@@ -29,7 +29,27 @@ const orderByID = async (order_id) => {
   return order;
 };
 
+const addOrder = async (order) => {
+  await knex.raw(
+    `insert into "order" (customer_id,grand_total) values (${order.customer_id},${order.grand_total})`
+  );
+
+  const orderResponse = await knex.raw(
+    `SELECT currval(pg_get_serial_sequence('order','order_id'));`
+  );
+
+  const order_id = orderResponse.rows[0].currval;
+
+  for (let i = 0; i < order.order_items.length; i++) {
+    await knex.raw(
+      `insert into order_item (order_id, product_id, quantity, base_price, total_price) values (${order_id},${order.order_items[i].product_id},${order.order_items[i].quantity},${order.order_items[i].base_price},${order.order_items[i].total_price})`
+    );
+  }
+  return { status: true };
+};
+
 module.exports = {
   listAllOrders,
   orderByID,
+  addOrder,
 };
