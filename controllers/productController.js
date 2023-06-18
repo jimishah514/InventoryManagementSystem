@@ -11,7 +11,18 @@ const getProductByID = async (req, res) => {
   res.status(200).send(product);
 };
 
+const updateProductByID = async (req, res) => {
+  const product_id = req.params.id;
+  const product = req.body;
+  product.product_name = `'${product.product_name}'`;
+  product.product_id = product_id;
+
+  const productResponse = await productModel.updateProductByID(product);
+  res.status(200).send(productResponse);
+};
+
 module.exports = {
   getProducts,
   getProductByID,
+  updateProductByID,
 };
